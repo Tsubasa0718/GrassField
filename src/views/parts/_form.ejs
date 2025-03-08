@@ -1,0 +1,180 @@
+<form action="#" id="js-form" class="p-form" noValidate>
+    <div class="p-form__item">
+        <label for="select" class="p-form__title">
+            お問い合わせ種類<span class="p-form__required">必須</span>
+        </label>
+        <div class="p-form__selectBlock">
+            <div class="p-form__selectWrap">
+                <select name="select" id="select" required aria-required="true" aria-describedby="select-error">
+                    <option value="">選択してください</option>
+                </select>
+                <span id="select-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-form__item">
+        <label for="comment" class="p-form__title">
+            お問い合わせ内容<span class="p-form__required">必須</span>
+        </label>
+        <div class="p-form__input-body">
+            <div class="p-form__input-field">
+                <textarea
+                    name="comment"
+                    id="comment"
+                    placeholder="お問い合わせをご記入ください"
+                    required
+                    aria-required="true"
+                    aria-describedby="comment-error"></textarea>
+                <span id="comment-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+        </div>
+    </div>
+
+    <fieldset class="p-form__item" aria-labelledby="name-label">
+        <legend id="name-label" class="p-form__name-title">
+            お名前<span class="p-form__required">必須</span>
+        </legend>
+        <div class="p-form__input-body p-form__input-fieldWrap">
+            <div class="p-form__input-field">
+                <label class="p-form__field-title" for="last-name">姓</label>
+                <input
+                    type="text"
+                    name="last-name"
+                    id="last-name"
+                    placeholder="山田"
+                    maxlength="10"
+                    required
+                    aria-required="true"
+                    aria-describedby="last-name-error">
+                <span id="last-name-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+            <div class="p-form__input-field">
+                <label class="p-form__field-title" for="first-name">名</label>
+                <input
+                    type="text"
+                    name="first-name"
+                    id="first-name"
+                    placeholder="太郎"
+                    maxlength="10"
+                    required
+                    aria-required="true"
+                    aria-describedby="first-name-error">
+                <span id="first-name-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="p-form__item" aria-labelledby="kana-label">
+        <legend id="kana-label" class="p-form__name-title">
+            フリガナ<span class="p-form__required">必須</span>
+        </legend>
+        <div class="p-form__input-body p-form__input-fieldWrap p-form__field-note">
+            <div class="p-form__input-field">
+                <label class="p-form__field-title" for="kana-first-name">セイ</label>
+                <input
+                    type="text"
+                    name="kana-first-name"
+                    id="kana-first-name"
+                    placeholder="ヤマダ"
+                    maxlength="10"
+                    required
+                    aria-required="true"
+                    aria-describedby="kana-first-name-error">
+                <span id="kana-first-name-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+            <div class="p-form__input-field">
+                <label class="p-form__field-title" for="kana-last-name">メイ</label>
+                <input
+                    type="text"
+                    name="kana-last-name"
+                    id="kana-last-name"
+                    placeholder="タロウ"
+                    maxlength="10"
+                    required
+                    aria-required="true"
+                    aria-describedby="kana-last-name-error">
+                <span id="kana-last-name-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="p-form__item">
+        <label for="email" class="p-form__title">
+            メールアドレス<span class="p-form__required">必須</span>
+        </label>
+        <div class="p-form__input-body">
+            <div class="p-form__input-field">
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="yamada@sample.co.jp"
+                    required
+                    aria-required="true"
+                    aria-describedby="email-error">
+                <span id="email-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-form__item">
+        <label for="tel" class="p-form__title">
+            電話番号<span class="p-form__required">必須</span>
+        </label>
+        <div class="p-form__input-body">
+            <div class="p-form__input-field">
+                <input
+                    type="tel"
+                    name="tel"
+                    id="tel"
+                    placeholder="09012345678"
+                    required
+                    aria-required="true"
+                    aria-describedby="tel-error">
+                <span id="tel-error" class="p-form__error" aria-live="polite"></span>
+            </div>
+            <small class="p-form__note">※半角数字でご入力下さい。ハイフン(-)は不要です。</small>
+        </div>
+    </div>
+
+    <fieldset class="p-form__item">
+        <legend class="p-form__title">
+            法人/個人 <span class="p-form__required">必須</span>
+        </legend>
+        <div class="p-form__input-body">
+            <div class="p-form__radio-box">
+                <input
+                    type="radio"
+                    id="corporation"
+                    name="user_type"
+                    value="corporation"
+                    required>
+                <label class="p-form__radio" for="corporation">法人</label>
+
+                <input
+                    type="radio"
+                    id="individual"
+                    name="user_type"
+                    value="individual"
+                    required>
+                <label class="p-form__radio" for="individual">個人</label>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="p-form__acceptArea">
+        <p class="p-form__acceptArea-text">
+            「<a href="#" class="p-form__acceptArea-link">プライバシーポリシー</a>」をご確認いただき、個人情報の取扱いについて同意いただける場合は「同意する」を選択してください。
+        </p>
+        <label class="p-form__acceptArea-check">
+            <input type="checkbox" id="privacy-policy" class="visually-hidden" required>
+            <span class="p-form__checkBox" tabindex="0" role="checkbox" aria-checked="false"></span>
+            <span>個人情報保護方針に同意する</span>
+        </label>
+    </div>
+
+    <div class="p-form__btn">
+        <button type="submit" class="c-btn--submit">入力内容を確認する</button>
+    </div>
+</form>

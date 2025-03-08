@@ -1,0 +1,52 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-contact{
+    // info
+    &__info{
+        padding: px-clamp(50,80,375,1600) 0 px-clamp(46,77,375,1600) 0;
+    }
+    &__info-title{
+        position: relative;
+        font-size:  px-clamp(24,28,375,1600);
+        font-weight: bold;
+        line-height: px-to-rem(30px);
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: px-to-rem(-20px);
+            left: 0;
+            width: px-to-rem(50px);
+            height: 1px;
+            background-color: var(--main-color);
+            }
+    }
+    &__info-text{
+        margin-top: px-to-rem(46px);
+        line-height: px-to-rem(28.8px);
+    }
+
+    // form
+    &__form{
+        padding-bottom: px-clamp(50,88,375,1600);
+    }
+    &__form-head{
+        position: relative;
+        font-size:  px-clamp(24,28,375,1600);
+        font-weight: bold;
+        line-height: px-to-rem(30px);
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: px-to-rem(-20px);
+            left: 0;
+            width: px-to-rem(50px);
+            height: 1px;
+            background-color: var(--main-color);
+            }
+    }
+    &__form-body{
+        margin-top: px-to-rem(50px);
+    }
+}

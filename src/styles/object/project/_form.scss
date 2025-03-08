@@ -1,0 +1,274 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-form{
+
+// テキストボックス・テキストエリア
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	padding: px-to-rem(11px) px-to-rem(20px) px-to-rem(9px) px-to-rem(20px);
+	border-radius: px-to-rem(4px);
+	border: 1px solid var(--border-color);
+}
+select.error,
+textarea.error,
+input[id = "tel"].error,
+input[id = "email"].error,
+input[id = "first-name"].error,
+input[id = "last-name"].error,
+input[id = "kana-first-name"].error,
+input[id = "kana-last-name"].error{
+ border: 1px solid var(--error-color);
+}
+// radioボタン
+// 大きさを定義
+input[type="radio"],
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+// selectボックス
+select{
+    -webkit-appearance: none;
+	  appearance: none;
+    display: block;
+  	width: 100%;
+    padding: px-to-rem(12px) px-to-rem(20px) px-to-rem(9px) px-to-rem(20px);
+    border-radius: px-to-rem(4px);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+}
+&__selectBlock{
+  @include responsive("tablet"){
+    width: 60%;
+  }
+}
+&__selectWrap{
+  position: relative;
+  display: block;
+  @include responsive("tablet"){
+    width: 100%;
+  }
+  &::after{
+    position: absolute;
+    right: px-to-rem(20px);
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    display: block;
+    width: px-to-rem(10px);
+    height:  px-to-rem(10px);
+    border-right: 2px solid #999;
+    border-bottom: 2px solid #999;
+    transform: rotate(45deg);
+    pointer-events: none;
+  }
+ &.error{
+  &::after{
+    top: px-to-rem(-55px);
+    border-right: 2px solid var(--error-color);
+    border-bottom: 2px solid var(--error-color);
+  }
+ }
+}
+
+// textarea
+textarea{
+  height: px-to-rem(240px);
+}
+// form-input-body
+&__input-body{
+  @include responsive("tablet"){
+    width: 60%;
+  }
+}
+// form-input-field
+&__input-fieldWrap{
+  @include responsive("tablet"){
+    display: flex;
+    align-items: center;
+ }
+}
+&__field-note{
+  position: relative;
+  &::after{
+    content: "※全角カタカナでご入力下さい。";
+    position: absolute;
+    left: 0;
+    bottom: px-to-rem(-16px);
+    font-size: px-to-rem(12px);
+    color: #707070;
+  }
+}
+
+&__input-field{
+  position: relative;
+  @include responsive("tablet"){
+    width: 100%;
+  }
+}
+&__input-field:nth-child(2){
+  margin-top: px-to-rem(8px);
+  @include responsive('tablet'){
+    margin: 0 0 0 px-to-rem(20px);
+    display: flex;
+    flex-direction: column;
+  }
+}
+// form-item
+&__item{
+    padding: px-clamp(16,24,375,1600) 0;
+    border-top: 1px dashed #333;
+    border-bottom:  1px dashed #333;
+    @include responsive("tablet"){
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+}
+// form-title
+&__title{
+    position: relative; // ✅ 必須ラベルを絶対配置するために relative を指定
+    display: inline-block;
+    margin-bottom: px-to-rem(8px);
+    font-size: px-to-rem(18px);
+    font-weight: bold;
+    line-height: px-to-rem(30px);
+}
+&__name-title{
+  position: relative; // ✅ 必須ラベルを絶対配置するために relative を指定
+    font-size: px-to-rem(18px);
+    font-weight: bold;
+    line-height: px-to-rem(30px);
+}
+&__field-title{
+    font-size: px-to-rem(18px);
+    font-weight: bold;
+    line-height: px-to-rem(30px);
+}
+&__title,
+&__name-title{
+  @include responsive('tablet'){
+    width: 40%;
+  }
+}
+
+// form-required
+&__required{
+    padding: 0 px-to-rem(14px);
+    margin-left: 1rem;
+    font-size: px-to-rem(12px);
+    background-color: var(--main-color);
+    color: var(--base-color);
+    @include responsive("tablet"){
+      position: absolute;
+      top: 50%;
+      right: px-to-rem(40px);
+      transform: translateY(-50%);
+    }
+}
+// form__note
+&__note{
+  display: block;
+  color: #707070;
+}
+// form-acceptArea
+&__acceptArea{
+  margin: px-clamp(50,80,375,1600) 0;
+  padding: px-clamp(16,34,375,1600) px-to-rem(20px) px-clamp(16,44,375,1600) px-to-rem(20px);
+  border: 1px solid #ccc;
+}
+&__acceptArea-check{
+   margin-top: px-clamp(25,43,375,1600);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+&__acceptArea-link{
+  color: var(--main-color);
+  &:hover{
+    border-bottom: 1px solid var(--main-color);
+  }
+}
+&__checkBox {
+  margin-right: px-clamp(8,15,375,1600);
+  position: relative;
+  width: px-to-rem(25px);
+  height: px-to-rem(25px);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: .2s all;
+  cursor: pointer;
+  background: #fff;
+
+  /* チェックマーク */
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - px-to-rem(4px));  // 🔹 4px 上へ調整（適宜調整）
+    left: calc(50% - px-to-rem(-7px)); // 🔹 7px 左へ調整
+    width: px-to-rem(20px);
+    height: px-to-rem(10px);
+    transition: .3s all;
+    border-bottom: 4px solid var(--main-color);
+    border-left: 4px solid var(--main-color);
+    transform: translate(-50%, -50%) rotate(-45deg) scale(0); // 初期状態で非表示
+}
+
+
+  /* ✅ checked クラスが付いたらチェックマークを表示 */
+  &.checked::after {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+  }
+}
+
+// btn
+&__btn{
+    text-align: center;
+}
+
+// radio
+&__radio{
+  position: relative;
+  margin-left: px-to-rem(32px);
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: px-to-rem(-32px);
+    border-radius: 50%;
+    width: px-to-rem(25px);
+    height: px-to-rem(25px);
+    border: 1px solid #ccc;
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    top: px-to-rem(4px);
+    left: px-to-rem(-28px);
+    width: px-to-rem(17px);
+    height: px-to-rem(17px);
+    background-color: var(--main-color);
+    border-radius: 50%;
+    transform: scale(0);  // 初期状態では非表示
+    transition: all 0.3s ease;
+  }
+}
+&__radio:first-of-type{
+   margin-right: px-to-rem(54px);
+}
+input[type="radio"]:checked + label.p-form__radio::after {
+    transform: scale(1);
+  }
+
+
+
+}

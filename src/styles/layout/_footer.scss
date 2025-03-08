@@ -1,0 +1,48 @@
+@use "../foundation/_mixin.scss" as *;
+
+.l-footer{
+    background-color: var(--footer-color);
+    @include responsive("tablet"){
+        padding: px-to-rem(40px) 0;
+    }
+    &__wrapper{
+     @include responsive("tablet"){
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+     }
+     &__list{
+        @include responsive("tablet"){
+            display: flex;
+        }
+     }
+     &__item{
+        border-bottom: 1px solid #333;
+        @include responsive("tablet"){
+            border-bottom: none;
+            border-right: 1px solid #333;
+            padding-right: 1.5rem;
+        }
+       @include responsive("tablet"){
+        &:not(:first-of-type){
+            padding-left: 1.5rem;
+        }
+       }
+     }
+     &__link{
+      font-size: px-to-rem(14px);
+      line-height: px-clamp(42,30,375,1600);
+      color: var(--base-color);
+      @include responsive("tablet"){
+      }
+     }
+    &__copy{
+        text-align: center;
+        color: var(--base-color);
+        padding: px-to-rem(40px) 0;
+      @include responsive("tablet"){
+        padding: 0;
+      }
+    }
+}

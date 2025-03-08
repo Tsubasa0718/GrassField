@@ -1,0 +1,32 @@
+<%
+  const pageMeta = typeof templateParameters !== 'undefined' ? templateParameters.pageMeta : metaData.contact;
+%>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= pageMeta.description %>">
+     <!-- OGP -->
+     <meta property="og:title" content="<%= pageMeta.title %>">
+     <meta property="og:description" content="<%= pageMeta.description %>">
+     <meta property="og:type" content="<%= pageMeta.type %>">
+     <meta property="og:url" content="<%= pageMeta.ogUrl %>">
+     <meta property="og:image" content="<%= pageMeta.ogImage %>">
+     <title><%= pageMeta.title %></title>
+     <!-- Google-fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+     <!-- favicon -->
+     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <%- include('../layout/_header.ejs',{navData}) %>
+    <%- include('../parts/_contact-head.ejs',{navData}) %>
+    <%- include('../sections/_contact.ejs',{navData}) %>
+    <%- include('../parts/_breadcrumb.ejs') %>
+    <%- include('../layout/_footer.ejs',{footerData}) %>
+</body>
+</html>

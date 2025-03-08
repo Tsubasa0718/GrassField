@@ -1,0 +1,27 @@
+@use "../../foundation/_mixin.scss" as *;
+.c-breadcrumb{
+    padding: px-to-rem(10px) 0 px-to-rem(10px) px-to-rem(50px);
+    display: none;
+    background-color: #EEEEEE;
+    @include responsive("tablet"){
+        display: block;
+    }
+    &__list{
+       display: flex;
+       align-items: center;
+    }
+    &__item:first-of-type::after{
+     content: "<";
+     margin-left: 1rem;
+    }
+    &__item:not(:first-of-type){
+      margin-left: 1rem;
+    }
+    &__link{
+        transition: .3s;
+    }
+    .first-link:hover{
+        color: var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+    }
+}

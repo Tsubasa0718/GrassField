@@ -1,0 +1,37 @@
+@charset "UTF-8";
+@use "./_mixin.scss" as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+        font-size: 100%;
+        font-family:"Noto Sans","Helvetica Neue",
+          Arial,
+          "Hiragino Kaku Gothic ProN",
+          "Hiragino Sans",
+          Meiryo,
+          sans-serif;
+
+}
+
+ img {
+    max-width: 100%;
+    height: auto;
+ }
+
+
+
+ :root {
+    --main-color: #37952F;
+    --base-color: #FFFFFF;
+    --line-color: #E7E7E7;
+    --footer-color: #707070;
+    --business-Bg-color: #F6FCF5;
+    --contact-Bg-color: #EAF5E9;
+    --border-color: #333;
+    --submit-color: #FF7600;
+    --error-color: #DF5656;
+ }
+

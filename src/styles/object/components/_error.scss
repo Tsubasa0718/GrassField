@@ -1,0 +1,24 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.c-error{
+    position: relative;
+    display: inline-block;
+    font-size: px-clamp(14,16,375,1600);
+    font-weight: bold;
+    margin:  px-clamp(16,20,375,1600) 0 px-clamp(16,20,375,1600) 1rem;
+
+color: var(--error-color);
+ &::before{
+    content: "";
+    background-image: url(../img/icon_attention.png); /* アイコンの画像パスを指定 */
+    background-size: contain; /* アイコンを背景に収める */
+    background-repeat: no-repeat; /* アイコンの繰り返しを防止 */
+    display: inline-block;
+    width: px-to-rem(16px); /* アイコンの幅を指定 */
+    height: px-to-rem(16px); /* アイコンの高さを指定 */
+    position: absolute;
+    left: px-to-rem(-16px); /* テキストの前に配置 */
+    top: 50%; /* 垂直方向の中央に配置 */
+    transform: translateY(-50%); /* アイコンを垂直方向の中央に揃える */
+ }
+}

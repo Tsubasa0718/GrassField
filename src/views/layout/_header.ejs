@@ -1,0 +1,25 @@
+<header class="l-header">
+    <div class="l-header__wrapper">
+        <div class="l-header__logo">
+            <a href="#">
+                <picture>
+                    <source srcset="/img/logo-sp.png" media="(max-width:768px)">
+                    <img src="/img/logo-pc.png" alt="GRASS FIELDのサイトロゴ">
+                </picture>
+            </a>
+        </div>
+        <nav id="nav" class="l-header__nav" aria-hidden="true">
+            <ul class="l-header__nav-list">
+                <% navData.forEach(item =>{ %>
+                    <li class="l-header__nav-item"><a class="l-header__nav-link" href="<%= item.link %>"><%= item.title %></a></li>
+                <% }) %>
+            </ul>
+        </nav>
+    </div>
+    <button  type="button" id="menu-btn" class="c-menu-btn l-sp-only" aria-controls="nav" aria-expanded="false">
+        <span class="c-menu-btn__line"></span>
+        <span class="c-menu-btn__line"></span>
+        <span class="c-menu-btn__line"></span>
+        <span class="c-menu-btn__text">Menu</span>
+    </button>
+</header>

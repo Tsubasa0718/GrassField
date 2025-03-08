@@ -1,0 +1,51 @@
+@use "../../foundation/_mixin.scss" as *;
+.c-cta{
+    padding: px-clamp(47,77,375,1600) 0;
+    background-color: var(--main-color);
+    color: var(--base-color);
+
+    &__title{
+     font-size: px-clamp(24,28,375,1600);
+     font-weight: bold;
+     line-height: px-to-rem(30px);
+     text-align: center;
+     position: relative;
+     &::after{
+      content: "";
+      width: px-to-rem(50px);
+      height: 1px;
+      position: absolute;
+      bottom: px-to-rem(-20px);
+      background-color: var(--base-color);
+      left: calc(50% - 25px);
+     }
+    }
+    &__supplement{
+        margin-top: px-to-rem(46px);
+        font-size: px-clamp(14,16,375,1600);
+        line-height: px-clamp(2,1.75,375,1600);
+        text-align: center;
+    }
+    &__btn{
+        margin-top: px-to-rem(30px);
+        text-align: center;
+    }
+
+    &__info{
+        margin-top: px-clamp(30,35,375,1600);
+        text-align: center;
+        line-height: 1.75;
+    }
+    &__info-supplement,
+    &__info-day{
+        font-family: px-clamp(14,16,375,1600);
+    }
+    &__info-tel{
+      font-size: px-clamp(40,48,375,1600);
+      font-weight: bold;
+      line-height: 1;
+        span{
+        font-size: px-clamp(24,30,375,1600);
+     }
+    }
+}

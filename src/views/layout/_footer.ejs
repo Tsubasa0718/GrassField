@@ -1,0 +1,14 @@
+<footer class="l-footer">
+   <div class="l-container">
+    <div class="l-footer__wrapper">
+        <ul class="l-footer__list">
+            <% footerData.forEach(item => { %>
+              <li class="l-footer__item"><a class="l-footer__link" href="<% item.link %>"><%= item.title %></a></li>
+            <% }) %>
+        </ul>
+        <div class="l-footer__copy">
+            <small >©sample All Rights Reserved.</small>
+        </div>
+    </div>
+   </div>
+</footer>

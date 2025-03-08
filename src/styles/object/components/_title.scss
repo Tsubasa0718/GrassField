@@ -1,0 +1,8 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.c-section-title{
+    font-size: px-clamp(28,48,375,1600);
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    line-height: px-to-rem(72px);
+}

@@ -1,0 +1,128 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-business {
+  // intro
+  &__intro {
+    padding: px-clamp(46, 74, 375, 1600) 0 px-clamp(40, 69, 375, 1600) 0;
+  }
+
+  &__intro-catch {
+    font-size: px-clamp(22, 36, 375, 1600);
+    font-weight: bold;
+    line-height: 1.8;
+    @include responsive("tablet") {
+      text-align: center;
+    }
+  }
+
+  &__intro-text {
+    font-size: 1rem;
+    line-height: 2;
+    margin-top: px-clamp(20, 38, 375, 1600);
+  }
+
+  // service
+  &__service {
+    background-color: var(--business-Bg-color);
+    padding-bottom: px-clamp(80, 200, 375, 1600);
+  }
+
+  &__service-body {
+    display: grid;
+    gap: px-to-rem(40px);
+  }
+
+  &__service-box {
+    @include responsive("tablet") {
+      display: flex;
+      align-items: stretch; // 高さを揃える
+    }
+  }
+
+  ._reverse {
+    @include responsive("tablet") {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__service-desc,
+  &__service-image {
+    @include responsive("tablet") {
+      width: 50%;
+    }
+  }
+
+  &__service-image {
+    width: 100vw; // ブラウザ幅いっぱいに広げる
+    height: px-to-rem(500px); // 高さ固定
+    @include responsive("tablet") {
+      display: flex;
+    }
+    img {
+      width: 100%;
+      height: 100%; // 高さを100%にする
+      object-fit: cover; // 画像の比率を維持
+    }
+  }
+
+  &__service-desc {
+    position: relative;
+    z-index: 1;
+    margin: px-to-rem(-50px) px-to-rem(20px) 0 px-to-rem(20px);
+    padding: px-to-rem(40px) px-to-rem(20px);
+    background-color: var(--base-color);
+    border: 1px solid var(--main-color);
+    @include responsive("tablet") {
+      top: px-to-rem(66px);
+      margin: 0;
+      margin-bottom: px-to-rem(50px);
+    }
+  }
+
+  // left/right の可変調整
+  ._reverse > .p-business__service-desc {
+    @include responsive("tablet") {
+      left: clamp(20px, 8vw, 170px);
+    }
+  }
+
+  ._normal > .p-business__service-desc {
+    @include responsive("tablet") {
+      right: clamp(20px, 8vw, 170px);
+    }
+  }
+
+  &__service-head {
+    margin-bottom: px-clamp(24, 29, 375, 1600);
+    font-size: px-clamp(20, 28, 375, 1600);
+    font-weight: bold;
+    line-height: px-to-rem(32px);
+  }
+
+  &__service-subhead {
+    font-size: px-clamp(16, 20, 375, 1600);
+    font-weight: bold;
+    line-height: px-to-rem(32px);
+    color: var(--main-color);
+  }
+
+  &__service-text {
+    font-size: px-clamp(14, 16, 375, 1600);
+    line-height: 2;
+  }
+
+  &__service-text:not(:first-of-type) {
+    margin-top: px-clamp(16, 14, 375, 1600);
+  }
+
+  &__service-descImageWrap {
+    margin-top: px-to-rem(20px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: px-to-rem(20px);
+    max-width: px-clamp(330, 630, 375, 1600);
+    @include responsive("phone") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

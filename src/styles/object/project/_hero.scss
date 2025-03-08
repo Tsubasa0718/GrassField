@@ -1,0 +1,34 @@
+@use "../../foundation/_mixin.scss" as *;
+
+.p-hero{
+    background-color: var(--main-color);
+    margin-top: px-clamp(50,100,375,1600);
+    padding: px-clamp(30,49,375,1600) 0;
+
+    &__container{
+    max-width: px-to-rem(1084px);
+    margin: 0 auto;
+    padding: 0 px-to-rem(20px);
+    justify-content: center;
+    @include responsive("phone"){
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: center
+    }
+  }
+ &__text{
+    margin-top: 1rem;
+    white-space: nowrap;
+    @include responsive("phone"){
+      margin-right: px-to-rem(74px);
+    }
+
+  }
+  &__title{
+   color: var(--base-color);
+   font-size: px-clamp(20,36,375,1600);
+   font-weight: bold;
+   line-height: 2;
+  }
+}

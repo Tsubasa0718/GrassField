@@ -1,0 +1,120 @@
+@use "../../foundation/_mixin.scss" as *;
+
+// menu
+.c-menu-btn{
+    position: fixed;
+    top: px-clamp(0,15,375,992);
+    right: 0;
+    z-index: 3;
+    width: px-to-rem(50px);
+    height: px-to-rem(50px);
+    background-color: var(--main-color);
+    border: 1px solid #000;
+
+  &__line{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-40%);
+    width: px-to-rem(25px);
+    height: px-to-rem(2px);
+    background-color: var(--base-color);
+    transition: .3s;
+    &:nth-child(1){
+        top: calc(40% - 7.5px); /* 8px上に移動 */
+    }
+    &:nth-child(3){
+        top: calc(40% + 7.5px); /* 8px上に移動 */
+    }
+  }
+  &[aria-expanded = "true"]{
+    .c-menu-btn__line{
+        &:nth-child(1){
+            top: 40%;
+            transform:  translate(-50%,-40%)  rotate(45deg);
+        }
+        &:nth-child(2){
+            opacity: 0;
+        }
+        &:nth-child(3){
+            top: 40%;
+            transform:  translate(-50%,-40%) rotate(-45deg);
+        }
+    }
+  }
+
+  // Menu
+  &__text{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: px-to-rem(2px);
+    font-size: px-to-rem(12px);
+    color: var(--base-color);
+
+  }
+}
+
+// btn
+
+.c-btn--md{
+  display: inline-block;
+  text-align: center;
+  width: px-clamp(292,306,375,1600);
+  padding: px-to-rem(10px) 0;
+  background-color: var(--main-color);
+  color: var(--base-color);
+  font-weight: bold;
+  line-height: 1.875;
+  transition: .3s;
+  &:hover{
+    background-color: var(--base-color);
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+  }
+}
+
+.c-btn--lg{
+  @extend .c-btn--md;
+  width: px-clamp(335,400,375,1600);
+  background-color: var(--base-color);
+  color: #333;
+  border: 1px solid var(--main-color);
+    &:hover{
+    background-color: var(--main-color);
+    color: var(--base-color);
+    border: none;
+  }
+
+}
+// contact
+.c-btn--contact{
+ display: inline-block;
+ text-align: center;
+ width: px-clamp(335,400,375,1600);
+ padding: px-to-rem(20px) 0;
+ color: var(--base-color);
+ list-style: 1.5;
+ background-color: var(--main-color);
+ border: 1px solid var(--base-color);
+
+}
+
+// submit
+
+.c-btn--submit{
+  display: inline-block;
+ text-align: center;
+ width: px-clamp(335,400,375,1600);
+ padding: px-to-rem(20px) 0;
+ font-size: px-to-rem(20px);
+ font-weight: bold;
+ color: var(--base-color);
+ list-style: 1.5;
+ background-color: var(--submit-color);
+ border: 1px solid var(--base-color);
+
+ &:hover{
+  opacity: .7;
+ }
+}
